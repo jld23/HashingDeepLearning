@@ -57,6 +57,7 @@ docker pull ottovonxu/slide:v3
 ## Run command
 
 `docker run -it --gpus all -u $(id -u):$(id -g)  ottovonxu/slide:v3 bash` This doesn't run at root but can't edit files in current location
+
 `docker run -it --gpus all ottovonxu/slide:v3 bash`
 
 ## Edit config
@@ -64,7 +65,10 @@ docker pull ottovonxu/slide:v3
 ## for GPU
 
 edit `/slide/src/HashingDeepLearning/python_examples/config.py`
-line 7 to say `GPUs = '2'` or whatever number of GPUs you have
+
+line 7 to say `GPUs = '2'` 
+
+or whatever number of GPUs you have
 
 ## for CPU
 
