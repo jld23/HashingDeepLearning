@@ -50,3 +50,36 @@ Run
 Note that `Makefile` needs to be modified based on the CNPY path. Also the `trainData, testData, logFile` in Config_amz.csv needs to be changed accordingly too.
 
 
+# Docker
+
+docker pull ottovonxu/slide:v3
+
+## Run command
+
+`docker run -it --gpus all -u $(id -u):$(id -g)  ottovonxu/slide:v3 bash` This doesn't run at root but can't edit files in current location
+`docker run -it --gpus all ottovonxu/slide:v3 bash`
+
+## Edit config
+
+## for GPU
+
+edit `/slide/src/HashingDeepLearning/python_examples/config.py`
+line 7 to say `GPUs = '2'` or whatever number of GPUs you have
+
+## for CPU
+
+None Needed
+
+## Run TF example
+
+```
+cd /slide/src/HashingDeepLearning/python_examples
+python example_full_softmax.py
+```
+
+## Run SLIDE example
+
+```
+cd /slide/src/HashingDeepLearning/SLIDE
+./runme Config_amz.csv
+```
